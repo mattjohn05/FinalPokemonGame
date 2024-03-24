@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Battle</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Pokemon</h1>
+        <div class="player" id="player1">
+            <h3>Player 1</h3>
+            <div class="pokemon-options" id="player1-pokemon-options">
+                <div class="pokemon-card"> <img src="gardevoir.gif" alt="Gardevoir">
+                    <button onclick="selectPokemon('gardevoir', 'player1')">Gardevoir</button>
+                </div>
+                <div class="pokemon-card">
+                    <img src="metagross.gif" alt="Metagross">
+                    <button onclick="selectPokemon('metagross', 'player1')">Metagross</button>
+                </div>
+                <div class="pokemon-card">
+                    <img src="garchomp.gif" alt="Garchomp">
+                    <button onclick="selectPokemon('garchomp', 'player1')">Garchomp</button>
+                </div>
+                <div class="pokemon-card"> <img src="milotic.gif" alt="Milotic">
+                    <button onclick="selectPokemon('milotic', 'player1')">Milotic</button>
+                </div>
+            </div>
+            <div id="player1-attacks" class="actions"></div>
+        </div>
+        <div class="player" id="player2">
+            <h3>Player 2</h3>
+            <div class="pokemon-options" id="player2-pokemon-options">
+                <div class="pokemon-card"> <img src="gardevoir.gif" alt="Gardevoir">
+                    <button onclick="selectPokemon('gardevoir', 'player2')">Gardevoir</button>
+                </div>
+                <div class="pokemon-card">
+                    <img src="metagross.gif" alt="Metagross">
+                    <button onclick="selectPokemon('metagross', 'player2')">Metagross</button>
+                </div>
+                <div class="pokemon-card">
+                    <img src="garchomp.gif" alt="Garchomp">
+                    <button onclick="selectPokemon('garchomp', 'player2')">Garchomp</button>
+                </div>
+                <div class="pokemon-card"> <img src="milotic.gif" alt="Milotic">
+                    <button onclick="selectPokemon('milotic', 'player2')">Milotic</button>
+                </div>
+            </div>
+            <div id="player2-attacks" class="actions"></div>
+        </div>
+        <div id="battle-container" style="display: none;">
+            <h1>Battle</h1>
+            <div class="player" id="player2">
+                <div class="panel" id="player2-panel">
+                    <h3>Player 2</h3>
+                    <img id="player2-pokemon" src="" alt="Opponent's Pokemon">
+                    <div id="player2-hp"></div>
+                </div>
+            </div>
+            <div class="actions">
+                <button onclick="attack('player2', 0)">Attack 1</button>
+                <button onclick="attack('player2', 1)">Attack 2</button>
+                <button onclick="attack('player2', 2)">Attack 3</button>
+                <button onclick="attack('player2', 3)">Attack 4</button>
+            </div>
+            <div class="player" id="player1">
+                <div class="panel" id="player1-panel">
+                    <h3>Player 1</h3>
+                    <img id="player1-pokemon" src="" alt="Player's Pokemon">
+                    <div id="player1-hp"></div>
+                </div>
+            </div>
+            <div class="actions">
+                <button onclick="attack('player1', 0)">Attack 1</button>
+                <button onclick="attack('player1', 1)">Attack 2</button>
+                <button onclick="attack('player1', 2)">Attack 3</button>
+                <button onclick="attack('player1', 3)">Attack 4</button>
+            </div>
+            <div id="battle-status"></div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
